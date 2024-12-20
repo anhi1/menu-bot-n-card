@@ -1,0 +1,99 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: poppins;
+}
+
+.menu-icono {/*label es el ICONO = */
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgb(98, 98, 210);
+    color: rgb(158, 244, 255);
+    padding: 10px 15px;
+    transition: background-color 0.3s ease,
+        transform 0.5s ease;
+}
+
+.menu-icono:hover {/*icono = label*/
+    background-color: rgb(158, 244, 255);
+    color:rgb(98, 98, 210)
+}
+
+/*Botón cerrar*/
+.menu-cerrar{
+    position:fixed;
+    top: 20px;
+    left: 250px;
+    font-size:24px;
+    cursor:pointer;
+    background-color: rgb(184, 35, 35);
+    color:white;
+    z-index:5;
+    padding: 10px 15px;
+    border-radius: 5px;
+    opacity:0;
+    visibility: hidden;
+    transition: opacity 0.1s ease,
+                visibility 0s 0.2s;               
+}
+
+.menu-cerrar:hover{
+    background-color: rgb(43, 43, 43);
+    color: white;
+}
+
+/* Cuando el menú está activado (checkbox está marcado), el botón de cerrar aparece */
+#menu-toggle:checked  ~ .menu-cerrar{
+    opacity:1;
+     visibility:visible;
+     transition-delay: 0.3s;
+ }
+
+#menu-toggle {/*input = campo = cuadradito */
+    display: none;
+}
+
+.menu {
+    position: fixed;
+    z-index:1;
+    border-radius: 20px 20 20px 20px;
+    top: 0px;
+    left: -350px;
+    width: 320px;
+    height: 100vw;
+    background-color: rgb(98, 98, 210);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+#menu-toggle:checked  ~ .menu {
+    transform:translateX(350px);
+}
+
+
+.menu ul {
+    list-style: none;
+    padding: 120px 0px;
+}
+
+.menu ul li a {
+    margin: 15px 0px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.5s ease;
+    height: 40px;
+    text-decoration: none;
+    color: white;   
+}
+
+.menu ul li a:hover{
+    background-color: rgb(197, 247, 254);
+    color: rgb(98, 98, 210);
+}
